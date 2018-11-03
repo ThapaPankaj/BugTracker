@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bugtracker
 {
-    class DatabaseConnection
+    class Database_Connection
     {
     }
 }

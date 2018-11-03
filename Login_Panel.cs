@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace bugtracker
 {
-    public partial class Login : Form
+    public partial class Login_Panel : Form
     {
-        public Login()
+        public Login_Panel()
         {
             InitializeComponent();
         }

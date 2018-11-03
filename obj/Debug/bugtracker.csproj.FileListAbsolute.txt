@@ -2,10 +2,12 @@ C:\Users\Pankaj\source\repos\bugtracker\bugtracker\bin\Debug\bugtracker.exe.conf
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\bin\Debug\bugtracker.exe
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\bin\Debug\bugtracker.pdb
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csprojAssemblyReference.cache
-C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Login.resources
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Properties.Resources.resources
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csproj.GenerateResource.cache
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csproj.CoreCompileInputs.cache
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.exe
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.pdb
-C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Registration.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Admin_Dashboard_Panel.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.AdminPanel.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Login_Panel.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.User_registration_Panel.resources

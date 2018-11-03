@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace bugtracker
 {
-    public partial class Registration : Form
+    public partial class User_registration_Panel : Form
     {
-        public Registration()
+        public User_registration_Panel()
         {
             InitializeComponent();
         }

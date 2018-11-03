@@ -1,6 +1,6 @@
 ﻿namespace bugtracker
 {
-    partial class Login
+    partial class Login_Panel
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             this.label3.Text = "LOGIN";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Login
+            // Login_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,8 +123,8 @@
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
-            this.Text = "Login";
+            this.Name = "Login_Panel";
+            this.Text = "Login_Panel";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

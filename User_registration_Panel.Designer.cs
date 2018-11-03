@@ -1,6 +1,6 @@
 ﻿namespace bugtracker
 {
-    partial class Registration
+    partial class User_registration_Panel
     {
         /// <summary>
         /// Required designer variable.
@@ -211,7 +211,7 @@
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // Registration
+            // Registration_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,8 +233,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Registration";
-            this.Text = "Registration";
+            this.Name = "Registration_Panel";
+            this.Text = "Registration_Panel";
             this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
