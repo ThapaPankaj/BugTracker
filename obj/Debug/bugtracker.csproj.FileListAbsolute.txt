@@ -1,0 +1,11 @@
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\bin\Debug\bugtracker.exe.config
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\bin\Debug\bugtracker.exe
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\bin\Debug\bugtracker.pdb
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csprojAssemblyReference.cache
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Login.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Properties.Resources.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csproj.GenerateResource.cache
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csproj.CoreCompileInputs.cache
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.exe
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.pdb
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Registration.resources
