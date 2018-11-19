@@ -53,14 +53,6 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.project_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.project_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assign_to = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assigned_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.completion_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assigned_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -308,70 +300,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.project_id,
-            this.project_name,
-            this.assign_to,
-            this.assigned_date,
-            this.completion_date,
-            this.assigned_by,
-            this.code,
-            this.description});
             this.dataGridView1.Location = new System.Drawing.Point(311, 81);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(799, 301);
             this.dataGridView1.TabIndex = 25;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // project_id
-            // 
-            this.project_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.project_id.DataPropertyName = "ProjectID";
-            this.project_id.HeaderText = "Project ID";
-            this.project_id.Name = "project_id";
-            this.project_id.Width = 79;
-            // 
-            // project_name
-            // 
-            this.project_name.DataPropertyName = "ProjectName";
-            this.project_name.HeaderText = "Project Name";
-            this.project_name.Name = "project_name";
-            // 
-            // assign_to
-            // 
-            this.assign_to.DataPropertyName = "AssignedTo";
-            this.assign_to.HeaderText = "Assigned To";
-            this.assign_to.Name = "assign_to";
-            // 
-            // assigned_date
-            // 
-            this.assigned_date.DataPropertyName = "AssignedDate";
-            this.assigned_date.HeaderText = "Assigned Date";
-            this.assigned_date.Name = "assigned_date";
-            // 
-            // completion_date
-            // 
-            this.completion_date.DataPropertyName = "CompletionDate";
-            this.completion_date.HeaderText = "Completion Date";
-            this.completion_date.Name = "completion_date";
-            // 
-            // assigned_by
-            // 
-            this.assigned_by.DataPropertyName = "AssignedBy";
-            this.assigned_by.HeaderText = "Assigned By";
-            this.assigned_by.Name = "assigned_by";
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "Code";
-            this.code.HeaderText = "Code";
-            this.code.Name = "code";
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
             // 
             // Admin_Panel
             // 
@@ -437,13 +369,5 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn project_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn project_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assign_to;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assigned_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn completion_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assigned_by;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }
