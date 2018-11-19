@@ -83,7 +83,8 @@
             // btn_login
             // 
             this.btn_login.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_login.Location = new System.Drawing.Point(69, 222);
+            this.btn_login.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_login.Location = new System.Drawing.Point(69, 221);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(98, 34);
             this.btn_login.TabIndex = 4;
@@ -94,8 +95,9 @@
             // btn_registration
             // 
             this.btn_registration.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registration.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_registration.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btn_registration.Location = new System.Drawing.Point(182, 222);
+            this.btn_registration.Location = new System.Drawing.Point(182, 221);
             this.btn_registration.Name = "btn_registration";
             this.btn_registration.Size = new System.Drawing.Size(151, 34);
             this.btn_registration.TabIndex = 5;
@@ -152,8 +154,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(406, 303);
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.ClientSize = new System.Drawing.Size(406, 281);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.combo_usertype);
             this.Controls.Add(this.label4);
@@ -164,6 +166,7 @@
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Login_Panel";
             this.Text = "Login_Panel";
             this.Load += new System.EventHandler(this.Login_Load);

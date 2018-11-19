@@ -50,6 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(2, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 29);
@@ -60,6 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
@@ -70,6 +72,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(12, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
@@ -80,6 +83,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);
@@ -90,6 +94,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(12, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 16);
@@ -100,6 +105,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(13, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 16);
@@ -110,6 +116,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(12, 231);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 16);
@@ -175,7 +182,8 @@
             // btn_register
             // 
             this.btn_register.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_register.Location = new System.Drawing.Point(10, 268);
+            this.btn_register.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_register.Location = new System.Drawing.Point(11, 268);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(106, 33);
             this.btn_register.TabIndex = 15;
@@ -186,7 +194,8 @@
             // btn_clear
             // 
             this.btn_clear.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.Location = new System.Drawing.Point(118, 268);
+            this.btn_clear.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_clear.Location = new System.Drawing.Point(119, 268);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(143, 33);
             this.btn_clear.TabIndex = 16;
@@ -197,7 +206,8 @@
             // btn_back
             // 
             this.btn_back.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(264, 268);
+            this.btn_back.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_back.Location = new System.Drawing.Point(265, 268);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(143, 33);
             this.btn_back.TabIndex = 17;
@@ -210,6 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(427, 319);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);
@@ -227,6 +238,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Chartreuse;
             this.Name = "User_registration_Panel";
             this.Text = "Registration_Panel";
             this.Load += new System.EventHandler(this.Registration_Load);

@@ -51,32 +51,25 @@
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_refresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.project_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.project_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assign_to = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assigned_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.completion_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assigned_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 27);
+            this.label1.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 29);
+            this.label1.Size = new System.Drawing.Size(264, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "Project  Registration";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.SteelBlue;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 81);
@@ -88,6 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SteelBlue;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 111);
@@ -99,6 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.SteelBlue;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 139);
@@ -110,6 +105,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.SteelBlue;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(4, 165);
@@ -121,6 +117,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.SteelBlue;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 192);
@@ -132,6 +129,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.SteelBlue;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(5, 222);
@@ -143,6 +141,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.SteelBlue;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(9, 362);
@@ -171,18 +170,19 @@
             // 
             // date_assigned_date
             // 
-            this.date_assigned_date.CustomFormat = "dd-MM-yyyy  HH:MM:ss";
+            this.date_assigned_date.CustomFormat = "yyyy-MM-dd";
             this.date_assigned_date.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_assigned_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_assigned_date.Location = new System.Drawing.Point(112, 135);
             this.date_assigned_date.Name = "date_assigned_date";
             this.date_assigned_date.Size = new System.Drawing.Size(193, 23);
             this.date_assigned_date.TabIndex = 11;
+            this.date_assigned_date.UseWaitCursor = true;
             this.date_assigned_date.ValueChanged += new System.EventHandler(this.date_assigned_date_ValueChanged);
             // 
             // date_completion_date
             // 
-            this.date_completion_date.CustomFormat = "dd/MM/yyyy  HH:MM:ss";
+            this.date_completion_date.CustomFormat = "yyyy-MM-dd ";
             this.date_completion_date.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_completion_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_completion_date.Location = new System.Drawing.Point(113, 163);
@@ -202,7 +202,7 @@
             // 
             // btn_submit
             // 
-            this.btn_submit.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_submit.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_submit.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_submit.ForeColor = System.Drawing.Color.White;
             this.btn_submit.Location = new System.Drawing.Point(10, 417);
@@ -215,7 +215,7 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_clear.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_clear.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.White;
             this.btn_clear.Location = new System.Drawing.Point(348, 417);
@@ -235,7 +235,7 @@
             // 
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1122, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1164, 25);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -258,7 +258,7 @@
             // 
             // btn_back
             // 
-            this.btn_back.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_back.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_back.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back.ForeColor = System.Drawing.Color.White;
             this.btn_back.Location = new System.Drawing.Point(467, 417);
@@ -271,7 +271,7 @@
             // 
             // btn_update
             // 
-            this.btn_update.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_update.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_update.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
             this.btn_update.Location = new System.Drawing.Point(115, 417);
@@ -280,10 +280,11 @@
             this.btn_update.TabIndex = 21;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
-            this.btn_delete.BackColor = System.Drawing.Color.SteelBlue;
+            this.btn_delete.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_delete.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
             this.btn_delete.Location = new System.Drawing.Point(231, 417);
@@ -292,95 +293,37 @@
             this.btn_delete.TabIndex = 22;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
-            // 
-            // btn_refresh
-            // 
-            this.btn_refresh.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_refresh.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_refresh.Location = new System.Drawing.Point(583, 418);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(115, 31);
-            this.btn_refresh.TabIndex = 24;
-            this.btn_refresh.Text = "Refresh";
-            this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.project_id,
-            this.project_name,
-            this.assign_to,
-            this.assigned_date,
-            this.completion_date,
-            this.assigned_by,
-            this.code,
-            this.description});
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(311, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(799, 301);
+            this.dataGridView1.Size = new System.Drawing.Size(841, 301);
             this.dataGridView1.TabIndex = 25;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // project_id
+            // label9
             // 
-            this.project_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.project_id.DataPropertyName = "ProjectID";
-            this.project_id.HeaderText = "Project ID";
-            this.project_id.Name = "project_id";
-            this.project_id.Width = 79;
-            // 
-            // project_name
-            // 
-            this.project_name.DataPropertyName = "ProjectName";
-            this.project_name.HeaderText = "Project Name";
-            this.project_name.Name = "project_name";
-            // 
-            // assign_to
-            // 
-            this.assign_to.DataPropertyName = "AssignedTo";
-            this.assign_to.HeaderText = "Assigned To";
-            this.assign_to.Name = "assign_to";
-            // 
-            // assigned_date
-            // 
-            this.assigned_date.DataPropertyName = "AssignedDate";
-            this.assigned_date.HeaderText = "Assigned Date";
-            this.assigned_date.Name = "assigned_date";
-            // 
-            // completion_date
-            // 
-            this.completion_date.DataPropertyName = "CompletionDate";
-            this.completion_date.HeaderText = "Completion Date";
-            this.completion_date.Name = "completion_date";
-            // 
-            // assigned_by
-            // 
-            this.assigned_by.DataPropertyName = "AssignedBy";
-            this.assigned_by.HeaderText = "Assigned By";
-            this.assigned_by.Name = "assigned_by";
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "Code";
-            this.code.HeaderText = "Code";
-            this.code.Name = "code";
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(582, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(266, 34);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Bug Tracking System";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1122, 467);
+            this.ClientSize = new System.Drawing.Size(1164, 467);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_back);
@@ -405,6 +348,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Admin_Panel";
             this.Text = "Admin_Panel";
+            this.Load += new System.EventHandler(this.Admin_Panel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -435,15 +379,7 @@
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn project_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn project_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assign_to;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assigned_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn completion_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assigned_by;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Label label9;
     }
 }
