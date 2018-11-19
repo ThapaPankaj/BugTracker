@@ -31,7 +31,6 @@
             this.Panel_Drop_navigator = new System.Windows.Forms.Panel();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.btn_user_registration = new System.Windows.Forms.Button();
             this.btn_add_new_project = new System.Windows.Forms.Button();
             this.grid_view_completed_project = new System.Windows.Forms.DataGridView();
             this.grid_view_pending_project = new System.Windows.Forms.DataGridView();
@@ -48,10 +47,9 @@
             // 
             // Panel_Drop_navigator
             // 
-            this.Panel_Drop_navigator.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Panel_Drop_navigator.BackColor = System.Drawing.Color.Transparent;
             this.Panel_Drop_navigator.Controls.Add(this.btn_exit);
             this.Panel_Drop_navigator.Controls.Add(this.btn_logout);
-            this.Panel_Drop_navigator.Controls.Add(this.btn_user_registration);
             this.Panel_Drop_navigator.Controls.Add(this.btn_add_new_project);
             this.Panel_Drop_navigator.Location = new System.Drawing.Point(5, 6);
             this.Panel_Drop_navigator.Name = "Panel_Drop_navigator";
@@ -84,25 +82,12 @@
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
-            // btn_user_registration
-            // 
-            this.btn_user_registration.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_user_registration.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_user_registration.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_user_registration.Location = new System.Drawing.Point(0, 234);
-            this.btn_user_registration.Name = "btn_user_registration";
-            this.btn_user_registration.Size = new System.Drawing.Size(160, 48);
-            this.btn_user_registration.TabIndex = 2;
-            this.btn_user_registration.Text = "User Registration";
-            this.btn_user_registration.UseVisualStyleBackColor = false;
-            this.btn_user_registration.Click += new System.EventHandler(this.btn_user_registration_Click);
-            // 
             // btn_add_new_project
             // 
             this.btn_add_new_project.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_add_new_project.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add_new_project.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_add_new_project.Location = new System.Drawing.Point(0, 183);
+            this.btn_add_new_project.Location = new System.Drawing.Point(0, 234);
             this.btn_add_new_project.Name = "btn_add_new_project";
             this.btn_add_new_project.Size = new System.Drawing.Size(160, 43);
             this.btn_add_new_project.TabIndex = 1;
@@ -227,7 +212,6 @@
 
         private System.Windows.Forms.Panel Panel_Drop_navigator;
         private System.Windows.Forms.Button btn_add_new_project;
-        private System.Windows.Forms.Button btn_user_registration;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.DataGridView grid_view_completed_project;

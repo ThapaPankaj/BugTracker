@@ -19,22 +19,20 @@ namespace bugtracker
 
         private void btn_add_new_project_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_user_registration_Click(object sender, EventArgs e)
-        {
-
+            Admin_Panel adminpanel = new Admin_Panel();
+            adminpanel.Show();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-
+            Login_Panel loginpanel = new Login_Panel();
+            loginpanel.Show();
+            this.Hide();
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void btn_refresh_completed_project_Click(object sender, EventArgs e)
