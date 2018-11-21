@@ -49,18 +49,21 @@
             this.txt_class = new System.Windows.Forms.TextBox();
             this.richtextbox_notes = new System.Windows.Forms.RichTextBox();
             this.richtextbox_source_code = new System.Windows.Forms.RichTextBox();
-            this.txt_screenshot = new System.Windows.Forms.TextBox();
             this.txt_priority = new System.Windows.Forms.TextBox();
             this.date_Report_date = new System.Windows.Forms.DateTimePicker();
             this.txt_reported_by = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.bugView = new System.Windows.Forms.ListView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_screenshot = new System.Windows.Forms.Button();
+            this.txt_ScreenshotPath = new System.Windows.Forms.TextBox();
+            this.combobox_bugstaus = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -213,6 +216,7 @@
             this.txt_bug_id.Name = "txt_bug_id";
             this.txt_bug_id.Size = new System.Drawing.Size(145, 20);
             this.txt_bug_id.TabIndex = 14;
+            this.txt_bug_id.TextChanged += new System.EventHandler(this.txt_bug_id_TextChanged);
             // 
             // txt_bug_title
             // 
@@ -265,13 +269,6 @@
             this.richtextbox_source_code.TabIndex = 21;
             this.richtextbox_source_code.Text = "";
             // 
-            // txt_screenshot
-            // 
-            this.txt_screenshot.Location = new System.Drawing.Point(134, 351);
-            this.txt_screenshot.Name = "txt_screenshot";
-            this.txt_screenshot.Size = new System.Drawing.Size(145, 20);
-            this.txt_screenshot.TabIndex = 22;
-            // 
             // txt_priority
             // 
             this.txt_priority.Location = new System.Drawing.Point(134, 372);
@@ -295,17 +292,6 @@
             this.txt_reported_by.Size = new System.Drawing.Size(145, 20);
             this.txt_reported_by.TabIndex = 25;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Process",
-            "Completed"});
-            this.comboBox1.Location = new System.Drawing.Point(134, 437);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 26;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -322,87 +308,134 @@
             this.btn_Add.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_Add.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(33, 470);
+            this.btn_Add.Location = new System.Drawing.Point(33, 614);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(98, 34);
             this.btn_Add.TabIndex = 28;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_update
             // 
             this.btn_update.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_update.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.White;
-            this.btn_update.Location = new System.Drawing.Point(134, 471);
+            this.btn_update.Location = new System.Drawing.Point(134, 615);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(98, 34);
             this.btn_update.TabIndex = 29;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
             this.btn_delete.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_delete.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(233, 471);
+            this.btn_delete.Location = new System.Drawing.Point(233, 615);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(98, 34);
             this.btn_delete.TabIndex = 30;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_clear
             // 
             this.btn_clear.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_clear.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.White;
-            this.btn_clear.Location = new System.Drawing.Point(332, 472);
+            this.btn_clear.Location = new System.Drawing.Point(332, 616);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(98, 34);
             this.btn_clear.TabIndex = 31;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_back
             // 
             this.btn_back.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_back.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_back.ForeColor = System.Drawing.Color.White;
-            this.btn_back.Location = new System.Drawing.Point(433, 472);
+            this.btn_back.Location = new System.Drawing.Point(433, 616);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(98, 34);
             this.btn_back.TabIndex = 32;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = false;
             // 
-            // listView1
+            // bugView
             // 
-            this.listView1.Location = new System.Drawing.Point(291, 64);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(759, 394);
-            this.listView1.TabIndex = 33;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.bugView.Location = new System.Drawing.Point(291, 64);
+            this.bugView.Name = "bugView";
+            this.bugView.Size = new System.Drawing.Size(819, 544);
+            this.bugView.TabIndex = 33;
+            this.bugView.UseCompatibleStateImageBehavior = false;
+            this.bugView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.bugView.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(34, 465);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 143);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_screenshot
+            // 
+            this.btn_screenshot.BackColor = System.Drawing.Color.CadetBlue;
+            this.btn_screenshot.ForeColor = System.Drawing.Color.White;
+            this.btn_screenshot.Location = new System.Drawing.Point(233, 350);
+            this.btn_screenshot.Name = "btn_screenshot";
+            this.btn_screenshot.Size = new System.Drawing.Size(46, 21);
+            this.btn_screenshot.TabIndex = 36;
+            this.btn_screenshot.Text = "Select Image";
+            this.btn_screenshot.UseVisualStyleBackColor = false;
+            this.btn_screenshot.Click += new System.EventHandler(this.btn_screenshot_Click);
+            // 
+            // txt_ScreenshotPath
+            // 
+            this.txt_ScreenshotPath.Location = new System.Drawing.Point(133, 350);
+            this.txt_ScreenshotPath.Name = "txt_ScreenshotPath";
+            this.txt_ScreenshotPath.Size = new System.Drawing.Size(99, 20);
+            this.txt_ScreenshotPath.TabIndex = 37;
+            // 
+            // combobox_bugstaus
+            // 
+            this.combobox_bugstaus.FormattingEnabled = true;
+            this.combobox_bugstaus.Items.AddRange(new object[] {
+            "Process",
+            "Completed"});
+            this.combobox_bugstaus.Location = new System.Drawing.Point(134, 438);
+            this.combobox_bugstaus.Name = "combobox_bugstaus";
+            this.combobox_bugstaus.Size = new System.Drawing.Size(144, 21);
+            this.combobox_bugstaus.TabIndex = 38;
+            this.combobox_bugstaus.SelectedIndexChanged += new System.EventHandler(this.combobox_bugstaus_SelectedIndexChanged);
             // 
             // Bug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(1054, 517);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(1122, 660);
+            this.Controls.Add(this.combobox_bugstaus);
+            this.Controls.Add(this.txt_ScreenshotPath);
+            this.Controls.Add(this.btn_screenshot);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.bugView);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txt_reported_by);
             this.Controls.Add(this.date_Report_date);
             this.Controls.Add(this.txt_priority);
-            this.Controls.Add(this.txt_screenshot);
             this.Controls.Add(this.richtextbox_source_code);
             this.Controls.Add(this.richtextbox_notes);
             this.Controls.Add(this.txt_class);
@@ -428,6 +461,7 @@
             this.Name = "Bug";
             this.Text = "Bug";
             this.Load += new System.EventHandler(this.Bug_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,17 +490,19 @@
         private System.Windows.Forms.TextBox txt_class;
         private System.Windows.Forms.RichTextBox richtextbox_notes;
         private System.Windows.Forms.RichTextBox richtextbox_source_code;
-        private System.Windows.Forms.TextBox txt_screenshot;
         private System.Windows.Forms.TextBox txt_priority;
         private System.Windows.Forms.DateTimePicker date_Report_date;
         private System.Windows.Forms.TextBox txt_reported_by;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView bugView;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_screenshot;
+        private System.Windows.Forms.TextBox txt_ScreenshotPath;
+        private System.Windows.Forms.ComboBox combobox_bugstaus;
     }
 }

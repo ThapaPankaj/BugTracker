@@ -115,7 +115,7 @@ namespace bugtracker
                 databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                //cmd.CommandText = "insert into project values(1,'" + txt_project_name.Text + "', '" + txt_assign_to.Text + "','" + date_assigned_date.Text + "','" + date_completion_date.Text + "','" + txt_assigned_by.Text + "','" + richtextbox_code.Text + "','" + txt_description.Text + "')";
+                cmd.CommandText = "insert into project values(1,'" + txt_project_name.Text + "', '" + txt_assign_to.Text + "','" + date_assigned_date.Text + "','" + date_completion_date.Text + "','" + txt_assigned_by.Text + "','" + richtextbox_code.Text + "','" + txt_description.Text + "')";
                 cmd.ExecuteNonQuery();
 
                 // Calling display_data Method
@@ -153,7 +153,7 @@ namespace bugtracker
         private void Admin_Panel_Load(object sender, EventArgs e)
         {
         }
-        //To Display Inserted Data listview
+        //To Display Inserted Project Data listview
         public void display_data()
         {
             listProjects.Clear();
