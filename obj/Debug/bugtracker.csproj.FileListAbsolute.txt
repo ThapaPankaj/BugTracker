@@ -15,3 +15,4 @@ C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\Google.Protobuf.dll
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\MySql.Data.xml
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.csproj.CopyComplete
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Admin_Panel.resources
+C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Bug.resources

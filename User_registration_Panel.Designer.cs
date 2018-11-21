@@ -181,46 +181,49 @@
             // 
             // btn_register
             // 
+            this.btn_register.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_register.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_register.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_register.ForeColor = System.Drawing.Color.White;
             this.btn_register.Location = new System.Drawing.Point(11, 268);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(106, 33);
             this.btn_register.TabIndex = 15;
             this.btn_register.Text = "Register";
-            this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.UseVisualStyleBackColor = false;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // btn_clear
             // 
+            this.btn_clear.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_clear.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_clear.ForeColor = System.Drawing.Color.White;
             this.btn_clear.Location = new System.Drawing.Point(119, 268);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(143, 33);
             this.btn_clear.TabIndex = 16;
             this.btn_clear.Text = "Clear";
-            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_back
             // 
+            this.btn_back.BackColor = System.Drawing.Color.CadetBlue;
             this.btn_back.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_back.ForeColor = System.Drawing.Color.White;
             this.btn_back.Location = new System.Drawing.Point(265, 268);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(143, 33);
             this.btn_back.TabIndex = 17;
             this.btn_back.Text = "Back";
             this.btn_back.UseMnemonic = false;
-            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // User_registration_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(427, 319);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_clear);

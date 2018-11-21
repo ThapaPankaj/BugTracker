@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SteelBlue;
+            this.label2.BackColor = System.Drawing.Color.CadetBlue;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(4, 108);
@@ -82,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.SteelBlue;
+            this.label3.BackColor = System.Drawing.Color.CadetBlue;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(4, 138);
@@ -94,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.SteelBlue;
+            this.label4.BackColor = System.Drawing.Color.CadetBlue;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 166);
@@ -106,7 +106,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.SteelBlue;
+            this.label6.BackColor = System.Drawing.Color.CadetBlue;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(4, 192);
@@ -118,7 +118,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.SteelBlue;
+            this.label7.BackColor = System.Drawing.Color.CadetBlue;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 219);
@@ -130,7 +130,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.SteelBlue;
+            this.label8.BackColor = System.Drawing.Color.CadetBlue;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(5, 249);
@@ -142,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.SteelBlue;
+            this.label5.BackColor = System.Drawing.Color.CadetBlue;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(9, 389);
@@ -310,7 +310,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.SteelBlue;
+            this.label10.BackColor = System.Drawing.Color.CadetBlue;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(5, 81);
@@ -330,9 +330,9 @@
             // listProjects
             // 
             this.listProjects.FullRowSelect = true;
-            this.listProjects.Location = new System.Drawing.Point(309, 83);
+            this.listProjects.Location = new System.Drawing.Point(309, 80);
             this.listProjects.Name = "listProjects";
-            this.listProjects.Size = new System.Drawing.Size(672, 324);
+            this.listProjects.Size = new System.Drawing.Size(672, 329);
             this.listProjects.TabIndex = 29;
             this.listProjects.UseCompatibleStateImageBehavior = false;
             this.listProjects.SelectedIndexChanged += new System.EventHandler(this.listProjects_SelectedIndexChanged);
@@ -342,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(989, 467);
             this.Controls.Add(this.listProjects);
             this.Controls.Add(this.txt_project_id);

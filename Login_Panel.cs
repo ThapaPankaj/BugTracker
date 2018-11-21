@@ -87,9 +87,11 @@ namespace bugtracker
                             MessageBox.Show("Sucessfully login" +"_" + " Admin " +"_" +dt.Rows[i][2]);
                             if (combo_usertype.SelectedIndex == 0)
                             {
-                                Admin_Panel adminpanel = new Admin_Panel();
-                             //   Admin_Dashboard_Panel adminpanel = new Admin_Dashboard_Panel();
-                                adminpanel.Show();
+                                //  Admin_Panel adminpanel = new Admin_Panel();
+                                //   Admin_Dashboard_Panel adminpanel = new Admin_Dashboard_Panel();
+                                // adminpanel.Show();
+                                Bug bug = new Bug();
+                                bug.Show();
                                 this.Hide();
                             }
                             else if (combo_usertype.SelectedIndex == 1)
