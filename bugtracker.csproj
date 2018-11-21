@@ -59,6 +59,12 @@
     <Compile Include="Admin_Panel.Designer.cs">
       <DependentUpon>Admin_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bug.Designer.cs">
+      <DependentUpon>Bug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Panel.cs">
       <SubType>Form</SubType>
     </Compile>

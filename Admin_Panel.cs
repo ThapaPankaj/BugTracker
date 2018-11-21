@@ -17,8 +17,10 @@ namespace bugtracker
         public Admin_Panel()
         {
             InitializeComponent();
+            //Calling Method To Display Inserted Project From Database
+            display_data();
         }
-        
+
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -53,7 +55,10 @@ namespace bugtracker
 
 
         {
+
             string projectname, assignto, assigneddate, completiondate, assignedby, code, description;
+            
+    
             projectname = txt_project_name.Text;
             assignto = txt_assign_to.Text;
             assigneddate = date_assigned_date.Text;
@@ -110,7 +115,7 @@ namespace bugtracker
                 databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into project values(1,'" + txt_project_name.Text + "', '" + txt_assign_to.Text + "','" + date_assigned_date.Text + "','" + date_completion_date.Text + "','" + txt_assigned_by.Text + "','" + richtextbox_code.Text + "','" + txt_description.Text + "')";
+                //cmd.CommandText = "insert into project values(1,'" + txt_project_name.Text + "', '" + txt_assign_to.Text + "','" + date_assigned_date.Text + "','" + date_completion_date.Text + "','" + txt_assigned_by.Text + "','" + richtextbox_code.Text + "','" + txt_description.Text + "')";
                 cmd.ExecuteNonQuery();
 
                 // Calling display_data Method
@@ -121,11 +126,12 @@ namespace bugtracker
 
             }
 
-        
+
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
+            txt_project_id.Clear();
             txt_project_name.Clear();
             txt_assigned_by.Clear();
             txt_assign_to.Clear();
@@ -143,56 +149,51 @@ namespace bugtracker
             this.Hide();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        /*    databaseConnection.Open();
-            MySqlCommand cmd = databaseConnection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandType = "SELECT * from project";
-            cmd.ExecuteNonQuery();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-
-            da.Fill(dt);
-          */  
-
-
-
-
-        }
-
-        int selectedRow;
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedRow = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[selectedRow];
-            txt_project_name.Text = row.Cells[0].Value.ToString();
-            txt_assign_to.Text = row.Cells[1].Value.ToString();
-            date_assigned_date.Text = row.Cells[2].Value.ToString();
-            date_completion_date.Text = row.Cells[3].Value.ToString();
-            txt_assigned_by.Text = row.Cells[4].Value.ToString();
-            richtextbox_code.Text = row.Cells[5].Value.ToString();
-            txt_description.Text = row.Cells[6].Value.ToString();
-
-        }
 
         private void Admin_Panel_Load(object sender, EventArgs e)
         {
-            display_data();
         }
-        //To Display Inserted Data in GridView
+        //To Display Inserted Data listview
         public void display_data()
         {
-            databaseConnection.Open();
-            MySqlCommand cmd = databaseConnection.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from project";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            databaseConnection.Close();
+            listProjects.Clear();
+            String query = "select * from project";
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
+            try
+            {
+                databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+               string project = dt.Rows[0].Field<String>("project_name");
+
+                foreach (DataColumn column in dt.Columns)
+                {
+                    listProjects.Columns.Add(column.ColumnName, -2, HorizontalAlignment.Left);
+                }
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListViewItem item = new ListViewItem(row[0].ToString());
+                    for (int i = 1; i < dt.Columns.Count; i++)
+                    {
+                        item.SubItems.Add(row[i].ToString());
+                       
+                    }
+                    listProjects.Items.Add(item);
+                    listProjects.View = View.Details;
+                }
+                databaseConnection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+
 
         }
 
@@ -202,36 +203,79 @@ namespace bugtracker
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
+
         {
-           /* databaseConnection.Open();
+           
+
+            databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "";
+            cmd.CommandText = " delete from project where project_id ='" + Convert.ToInt32(txt_project_id.Text)+ "'";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
             databaseConnection.Close();
-            */
+            MessageBox.Show("Selected Project Sucessfully Deleted !!!");
+            listProjects.Clear();
+            display_data();
+
+
         }
+    
 
         private void btn_update_Click(object sender, EventArgs e)
         {
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from project";
+            cmd.CommandText = "update project set project_name='" + txt_project_name.Text + "', assign_to ='" + txt_assign_to.Text + "',assigned_date='" + date_assigned_date.Text + "', completion_date='" + date_completion_date.Text + "',assigned_by='" + txt_assigned_by.Text + "',code='" + richtextbox_code.Text + "',description='" + txt_description.Text + "' where project_id ='" + Convert.ToInt32(txt_project_id.Text)+ "'";
+
+            Console.WriteLine(cmd.CommandText);
+            cmd.ExecuteNonQuery();
+           
+       
+            databaseConnection.Close();
+            MessageBox.Show("Selected Project Sucessfully Updated !!!");
+            listProjects.Clear();
+             display_data();
+        }
+
+        private void listProjects_DoubleClick(object sender, EventArgs e)
+        {
+            int projectID = Convert.ToInt32(listProjects.FocusedItem.SubItems[0].Text);
+            
+            databaseConnection.Open();
+            MySqlCommand cmd = databaseConnection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from project where project_id = "+projectID;
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            int project_ID = dt.Rows[0].Field<int>("project_id");
+            txt_project_id.Text = project_ID.ToString();
+            string project = dt.Rows[0].Field<String>("project_name");
+            txt_project_name.Text = project;
+            string assignto = dt.Rows[0].Field<string>("assign_to");
+            txt_assign_to.Text = assignto;
+            DateTime assigneddate = dt.Rows[0].Field<DateTime>("assigned_date");
+            date_assigned_date.Text = assigneddate.ToString();
+            DateTime completiondate = dt.Rows[0].Field<DateTime>("completion_date");
+            date_completion_date.Text =completiondate.ToString();
+            string assignedby = dt.Rows[0].Field<string>("assigned_by");
+            txt_assigned_by.Text = assignedby;
+            string code = dt.Rows[0].Field<string>("code");
+            richtextbox_code.Text = code;
+            string description = dt.Rows[0].Field<string>("description");
+            txt_description.Text = description;
+
+
             databaseConnection.Close();
         }
+
+        private void listProjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
-
-
-
-
-}  
+    }
