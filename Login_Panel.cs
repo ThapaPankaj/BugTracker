@@ -84,26 +84,38 @@ namespace bugtracker
                     {
                         if (dt.Rows[i]["User_type"].ToString() == usertype)
                         {
-                            MessageBox.Show("Sucessfully login" +"_" + " Admin " +"_" +dt.Rows[i][2]);
+                           
                             if (combo_usertype.SelectedIndex == 0)
                             {
                                 //  Admin_Panel adminpanel = new Admin_Panel();
-                                //   Admin_Dashboard_Panel adminpanel = new Admin_Dashboard_Panel();
-                                // adminpanel.Show();
+                                MessageBox.Show("Sucessfully login" + "_" + " Admin " + "_" + dt.Rows[i][3]);
+                                new DashBoard_Panel(txt_username.Text, "Admin").Show();
+                               
+
                                 //  Bug bug = new Bug();
                                 // bug.Show();
 
-                                BugFix bugfix = new BugFix();
-                                bugfix.Show();
+                                //  BugFix_Panel bugfix = new BugFix_Panel();
+                                //  bugfix.Show();
                                 this.Hide();
                             }
-                            else if (combo_usertype.SelectedIndex == 1)
+                            
+                            if (combo_usertype.SelectedIndex == 1)
                             {
+                                MessageBox.Show("Sucessfully login" + "_" + " Developer " + "_" + dt.Rows[i][3]);
 
+                                new DashBoard_Panel(txt_username.Text, "Developer").Show();
+                                this.Hide();
+                               
                             }
-                            else
+                           
+                            if (combo_usertype.SelectedIndex == 2)
                             {
+                                MessageBox.Show("Sucessfully login" + "_" + " Tester " + "_" + dt.Rows[i][3]);
 
+                                new DashBoard_Panel(txt_username.Text, "Tester").Show();
+                                this.Hide();
+                               
                             }
                         }
                     }
@@ -119,12 +131,6 @@ namespace bugtracker
             }
         }
 
-        private void btn_registration_Click(object sender, EventArgs e)
-        {
-            User_registration_Panel userregistration = new User_registration_Panel();
-            userregistration.Show();
-            this.Hide();
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {

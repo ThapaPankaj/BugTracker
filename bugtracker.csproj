@@ -47,29 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin_Dashboard_Panel.cs">
+    <Compile Include="Project_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Dashboard_Panel.Designer.cs">
-      <DependentUpon>Admin_Dashboard_Panel.cs</DependentUpon>
+    <Compile Include="Project_Panel.Designer.cs">
+      <DependentUpon>Project_Panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin_Panel.cs">
+    <Compile Include="Bug_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_Panel.Designer.cs">
-      <DependentUpon>Admin_Panel.cs</DependentUpon>
+    <Compile Include="Bug_Panel.Designer.cs">
+      <DependentUpon>Bug_Panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bug.cs">
+    <Compile Include="BugFix_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bug.Designer.cs">
-      <DependentUpon>Bug.cs</DependentUpon>
+    <Compile Include="BugFix_Panel.Designer.cs">
+      <DependentUpon>BugFix_Panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="BugFix.cs">
+    <Compile Include="DashBoard_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BugFix.Designer.cs">
-      <DependentUpon>BugFix.cs</DependentUpon>
+    <Compile Include="DashBoard_Panel.Designer.cs">
+      <DependentUpon>DashBoard_Panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Panel.cs">
       <SubType>Form</SubType>
@@ -85,17 +85,17 @@
     <Compile Include="User_registration_Panel.Designer.cs">
       <DependentUpon>User_registration_Panel.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin_Dashboard_Panel.resx">
-      <DependentUpon>Admin_Dashboard_Panel.cs</DependentUpon>
+    <EmbeddedResource Include="Project_Panel.resx">
+      <DependentUpon>Project_Panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin_Panel.resx">
-      <DependentUpon>Admin_Panel.cs</DependentUpon>
+    <EmbeddedResource Include="Bug_Panel.resx">
+      <DependentUpon>Bug_Panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bug.resx">
-      <DependentUpon>Bug.cs</DependentUpon>
+    <EmbeddedResource Include="BugFix_Panel.resx">
+      <DependentUpon>BugFix_Panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BugFix.resx">
-      <DependentUpon>BugFix.cs</DependentUpon>
+    <EmbeddedResource Include="DashBoard_Panel.resx">
+      <DependentUpon>DashBoard_Panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Panel.resx">
       <DependentUpon>Login_Panel.cs</DependentUpon>

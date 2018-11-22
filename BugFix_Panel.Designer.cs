@@ -1,6 +1,6 @@
 ﻿namespace bugtracker
 {
-    partial class BugFix
+    partial class BugFix_Panel
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.combobox_bugfixstatus = new System.Windows.Forms.ComboBox();
+            this.btn_finished = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txt_bug_title = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bugfixView
@@ -77,6 +80,7 @@
             this.txt_bugfix_id.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_bugfix_id.Location = new System.Drawing.Point(101, 59);
             this.txt_bugfix_id.Name = "txt_bugfix_id";
+            this.txt_bugfix_id.ReadOnly = true;
             this.txt_bugfix_id.Size = new System.Drawing.Size(193, 23);
             this.txt_bugfix_id.TabIndex = 52;
             // 
@@ -96,6 +100,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(490, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(266, 34);
@@ -139,20 +144,22 @@
             this.btn_back.TabIndex = 47;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // txt_resolve_by
             // 
             this.txt_resolve_by.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_resolve_by.Location = new System.Drawing.Point(101, 339);
+            this.txt_resolve_by.Location = new System.Drawing.Point(101, 310);
             this.txt_resolve_by.Name = "txt_resolve_by";
             this.txt_resolve_by.Size = new System.Drawing.Size(192, 23);
             this.txt_resolve_by.TabIndex = 46;
+            this.txt_resolve_by.TextChanged += new System.EventHandler(this.txt_resolve_by_TextChanged);
             // 
             // richtextbox_resolve_code
             // 
-            this.richtextbox_resolve_code.Location = new System.Drawing.Point(102, 111);
+            this.richtextbox_resolve_code.Location = new System.Drawing.Point(102, 107);
             this.richtextbox_resolve_code.Name = "richtextbox_resolve_code";
-            this.richtextbox_resolve_code.Size = new System.Drawing.Size(192, 199);
+            this.richtextbox_resolve_code.Size = new System.Drawing.Size(192, 173);
             this.richtextbox_resolve_code.TabIndex = 45;
             this.richtextbox_resolve_code.Text = "";
             // 
@@ -187,7 +194,7 @@
             this.date_resolve_date.CustomFormat = "yyyy-MM-dd ";
             this.date_resolve_date.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_resolve_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date_resolve_date.Location = new System.Drawing.Point(102, 364);
+            this.date_resolve_date.Location = new System.Drawing.Point(102, 335);
             this.date_resolve_date.Name = "date_resolve_date";
             this.date_resolve_date.Size = new System.Drawing.Size(192, 23);
             this.date_resolve_date.TabIndex = 41;
@@ -268,6 +275,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 34);
@@ -304,7 +312,7 @@
             this.label12.BackColor = System.Drawing.Color.CadetBlue;
             this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(8, 366);
+            this.label12.Location = new System.Drawing.Point(8, 337);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 16);
             this.label12.TabIndex = 58;
@@ -328,7 +336,7 @@
             this.label14.BackColor = System.Drawing.Color.CadetBlue;
             this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(8, 341);
+            this.label14.Location = new System.Drawing.Point(8, 312);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(69, 16);
             this.label14.TabIndex = 60;
@@ -346,7 +354,7 @@
             // txt_project_name
             // 
             this.txt_project_name.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_project_name.Location = new System.Drawing.Point(102, 313);
+            this.txt_project_name.Location = new System.Drawing.Point(102, 284);
             this.txt_project_name.Name = "txt_project_name";
             this.txt_project_name.Size = new System.Drawing.Size(192, 23);
             this.txt_project_name.TabIndex = 62;
@@ -357,7 +365,7 @@
             this.label15.BackColor = System.Drawing.Color.CadetBlue;
             this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(6, 313);
+            this.label15.Location = new System.Drawing.Point(6, 284);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(85, 16);
             this.label15.TabIndex = 63;
@@ -369,7 +377,7 @@
             this.label16.BackColor = System.Drawing.Color.CadetBlue;
             this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(8, 392);
+            this.label16.Location = new System.Drawing.Point(9, 364);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(89, 16);
             this.label16.TabIndex = 65;
@@ -381,17 +389,53 @@
             this.combobox_bugfixstatus.Items.AddRange(new object[] {
             "Process",
             "Completed"});
-            this.combobox_bugfixstatus.Location = new System.Drawing.Point(101, 391);
+            this.combobox_bugfixstatus.Location = new System.Drawing.Point(101, 361);
             this.combobox_bugfixstatus.Name = "combobox_bugfixstatus";
             this.combobox_bugfixstatus.Size = new System.Drawing.Size(192, 21);
             this.combobox_bugfixstatus.TabIndex = 66;
             // 
-            // BugFix
+            // btn_finished
+            // 
+            this.btn_finished.BackColor = System.Drawing.Color.CadetBlue;
+            this.btn_finished.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_finished.ForeColor = System.Drawing.Color.White;
+            this.btn_finished.Location = new System.Drawing.Point(823, 428);
+            this.btn_finished.Name = "btn_finished";
+            this.btn_finished.Size = new System.Drawing.Size(115, 31);
+            this.btn_finished.TabIndex = 67;
+            this.btn_finished.Text = "Finished";
+            this.btn_finished.UseVisualStyleBackColor = false;
+            this.btn_finished.Click += new System.EventHandler(this.btn_finished_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.CadetBlue;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(9, 387);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 16);
+            this.label17.TabIndex = 69;
+            this.label17.Text = "Bug Title";
+            // 
+            // txt_bug_title
+            // 
+            this.txt_bug_title.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_bug_title.Location = new System.Drawing.Point(101, 384);
+            this.txt_bug_title.Name = "txt_bug_title";
+            this.txt_bug_title.Size = new System.Drawing.Size(192, 23);
+            this.txt_bug_title.TabIndex = 68;
+            // 
+            // BugFix_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(949, 471);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.txt_bug_title);
+            this.Controls.Add(this.btn_finished);
             this.Controls.Add(this.combobox_bugfixstatus);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -422,7 +466,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Name = "BugFix";
+            this.Name = "BugFix_Panel";
             this.Text = "BugFix";
             this.Load += new System.EventHandler(this.BugFix_Load);
             this.ResumeLayout(false);
@@ -461,5 +505,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox combobox_bugfixstatus;
+        private System.Windows.Forms.Button btn_finished;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txt_bug_title;
     }
 }

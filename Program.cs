@@ -16,7 +16,7 @@ namespace bugtracker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BugFix());
+            Application.Run(new Login_Panel());
         }
     }
 }

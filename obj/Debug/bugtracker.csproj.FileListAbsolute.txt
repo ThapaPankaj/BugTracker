@@ -7,13 +7,13 @@ C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csproj.G
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.csproj.CoreCompileInputs.cache
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.exe
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.pdb
-C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Admin_Dashboard_Panel.resources
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Login_Panel.resources
 C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.User_registration_Panel.resources
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\MySql.Data.dll
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\Google.Protobuf.dll
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\MySql.Data.xml
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.csproj.CopyComplete
-C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Admin_Panel.resources
-C:\Users\Pankaj\source\repos\bugtracker\bugtracker\obj\Debug\bugtracker.Bug.resources
-C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.BugFix.resources
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Dashboard_Panel.resources
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Bug_Panel.resources
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.BugFix_Panel.resources
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Project_Panel.resources

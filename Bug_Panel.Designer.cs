@@ -1,6 +1,6 @@
 ﻿namespace bugtracker
 {
-    partial class Bug
+    partial class Bug_Panel
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,7 @@
             this.btn_screenshot = new System.Windows.Forms.Button();
             this.txt_ScreenshotPath = new System.Windows.Forms.TextBox();
             this.combobox_bugstaus = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,6 +215,7 @@
             // 
             this.txt_bug_id.Location = new System.Drawing.Point(133, 64);
             this.txt_bug_id.Name = "txt_bug_id";
+            this.txt_bug_id.ReadOnly = true;
             this.txt_bug_id.Size = new System.Drawing.Size(145, 20);
             this.txt_bug_id.TabIndex = 14;
             this.txt_bug_id.TextChanged += new System.EventHandler(this.txt_bug_id_TextChanged);
@@ -366,6 +368,7 @@
             this.btn_back.TabIndex = 32;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // bugView
             // 
@@ -416,12 +419,23 @@
             this.combobox_bugstaus.TabIndex = 38;
             this.combobox_bugstaus.SelectedIndexChanged += new System.EventHandler(this.combobox_bugstaus_SelectedIndexChanged);
             // 
-            // Bug
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(565, 19);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(266, 34);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "Bug Tracking System";
+            // 
+            // Bug_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1122, 660);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.combobox_bugstaus);
             this.Controls.Add(this.txt_ScreenshotPath);
             this.Controls.Add(this.btn_screenshot);
@@ -458,7 +472,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Bug";
+            this.Name = "Bug_Panel";
             this.Text = "Bug";
             this.Load += new System.EventHandler(this.Bug_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -504,5 +518,6 @@
         private System.Windows.Forms.Button btn_screenshot;
         private System.Windows.Forms.TextBox txt_ScreenshotPath;
         private System.Windows.Forms.ComboBox combobox_bugstaus;
+        private System.Windows.Forms.Label label14;
     }
 }

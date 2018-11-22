@@ -11,14 +11,17 @@ using System.Windows.Forms;
 
 namespace bugtracker
 {
-    public partial class BugFix : Form
+    public partial class BugFix_Panel : Form
     {
+        String username, userRole;
         MySqlConnection databaseConnection = new MySqlConnection("datasource=localhost;username=root;password=umapunkoz;database=bugtracker;");
-        public BugFix()
+        public BugFix_Panel(String username, String userRole)
         {
             InitializeComponent();
             fillcombo();
             display_bugFixed_details();
+            this.username = username;
+            this.userRole = userRole;
         }
 
         private void txt_assigned_by_TextChanged(object sender, EventArgs e)
@@ -28,22 +31,9 @@ namespace bugtracker
 
         private void combobox_bug_id_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //fillcombo();
-            /* string query = "select * from bug where bug_id ='"+combobox_bug_id.Text+"'";
-             MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
-             MySqlDataReader dr;        
-             while(dr.Read())
-             {
-                 string resolvecode = (string)dr["source_code"].ToString();
-                 richtextbox_resolve_code.Text = resolvecode;
+            fillcombo();
 
-
-             }
-             databaseConnection.Close();
-
-
-         } */
-          
+            databaseConnection.Open();
             String query = "select * from bug where bug_id = '" +combobox_bug_id.SelectedItem.ToString()+ "'";
             MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
             cmd.ExecuteNonQuery();
@@ -54,6 +44,7 @@ namespace bugtracker
             {
                 richtextbox_resolve_code.Text = dr["source_code"].ToString();
                 txt_project_name.Text = dr["project_name"].ToString();
+                txt_bug_title.Text = dr[ "bug_title"].ToString();
             }
 
             databaseConnection.Close();
@@ -88,21 +79,21 @@ namespace bugtracker
             txt_bugfix_id.Clear();
             txt_project_name.Clear();
             txt_resolve_by.Clear();
+            txt_bug_title.Clear();
             richtextbox_resolve_code.Clear();
 
         }
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
-            string resolvecode, projectname, resolveby,resolvedate, bugfixstatus;
-           // int bugfixid, bugid;
-           // bugfixid = Convert.ToInt32(txt_bugfix_id.Text);
-           // bugid = Convert.ToInt32(combobox_bug_id.Text);
+            string resolvecode, projectname, resolveby,resolvedate, bugfixstatus,bugtitle;
+           
             resolvecode = richtextbox_resolve_code.Text;
             projectname = txt_project_name.Text;
             resolveby = txt_resolve_by.Text;
             resolvedate = date_resolve_date.Text;
             bugfixstatus = combobox_bugfixstatus.Text;
+            bugtitle = txt_bug_title.Text;
             if (string.IsNullOrEmpty(resolvecode))
             {
                 MessageBox.Show("Resolve Code Field Cannot Be Empty!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -130,23 +121,26 @@ namespace bugtracker
             {
                 MessageBox.Show("Resolve Date Field Cannot Be Empty!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 date_resolve_date.Focus();
-            
+
+            }
+            else if (string.IsNullOrEmpty(bugtitle))
+            {
+                MessageBox.Show("Bug Title Field Cannot Be Empty!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_bug_title.Focus();
             }
             else
             {
-              databaseConnection.Open();
+                databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into bugfix values(1,'" + Convert.ToInt32(combobox_bug_id.Text) + "', '" + richtextbox_resolve_code.Text + "','" + txt_project_name.Text + "','" + txt_resolve_by.Text + "','" + date_resolve_date.Text + "','" +combobox_bugfixstatus.Text +"')";
+                cmd.CommandText = "insert into bugfix values('1','" + Convert.ToInt32(combobox_bug_id.Text) + "', '" + richtextbox_resolve_code.Text + "','" + txt_project_name.Text + "','" + txt_resolve_by.Text + "','" + date_resolve_date.Text + "','" + combobox_bugfixstatus.Text + "','" + txt_bug_title.Text + "')";
                 cmd.ExecuteNonQuery();
-
-                // Calling display_data Method
-             //   display_data();
                 databaseConnection.Close();
-                MessageBox.Show("BugFix Details Has Been Sucessfully Added !!");
+ 
+                MessageBox.Show("Bug Fix Details Has Been Sucessfully Added !!");
                 bugfixView.Clear();
+                // Calling display_data Method
                 display_bugFixed_details();
-
 
             }
 
@@ -236,6 +230,11 @@ namespace bugtracker
             DateTime resolvedate = dt.Rows[0].Field<DateTime>("resolve_date");
             date_resolve_date.Text = resolvedate.ToString();
 
+            string bugtitle = dt.Rows[0].Field<string>("bug_title");
+            txt_bug_title.Text = bugtitle;
+
+
+
             databaseConnection.Close();
         }
 
@@ -244,7 +243,7 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " delete from bugfix where bugfix_id ='" + Convert.ToInt32(txt_bugfix_id.Text) + "'";
+            cmd.CommandText = " delete from bugfix where bugfix_id ='" + txt_bugfix_id.Text + "'";
             cmd.ExecuteNonQuery();
             databaseConnection.Close();
             MessageBox.Show("Selected BugFix Details Has Been Sucessfully Deleted !!!");
@@ -257,7 +256,7 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update bugfix set bug_id='" +combobox_bug_id.Text+ "', resolve_code ='" + richtextbox_resolve_code.Text + "',project_name='" + txt_project_name.Text + "',resolve_by='" + txt_resolve_by.Text + "',resolve_date='" + date_resolve_date.Text + "',bugfix_status='" +combobox_bugfixstatus.Text +"' where bugfix_id ='" + txt_bugfix_id.Text + "'";
+            cmd.CommandText = "update bugfix set bug_id='" +combobox_bug_id.Text+ "', resolve_code ='" + richtextbox_resolve_code.Text + "',project_name='" + txt_project_name.Text + "',resolve_by='" + txt_resolve_by.Text + "',resolve_date='" + date_resolve_date.Text + "',bugfix_status='" +combobox_bugfixstatus.Text +"',bug_title='"+txt_bug_title.Text +"' where bugfix_id ='" + txt_bugfix_id.Text + "'";
 
             Console.WriteLine(cmd.CommandText);
             cmd.ExecuteNonQuery();
@@ -267,6 +266,24 @@ namespace bugtracker
             MessageBox.Show("Selected BugFix Details Has Been Sucessfully Updated !!!");
             bugfixView.Clear();
             display_bugFixed_details();
+        }
+
+        private void btn_finished_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+           new DashBoard_Panel(this.username,userRole).Show();
+           // dashboard.Show();
+            this.Hide();
+        }
+
+        private void txt_resolve_by_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

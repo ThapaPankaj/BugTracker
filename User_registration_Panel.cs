@@ -13,12 +13,14 @@ namespace bugtracker
 {
     public partial class User_registration_Panel : Form
     {
-       
+        String username, userRole;
 
-        public User_registration_Panel()
+        public User_registration_Panel(String username, String userRole)
         {
  
             InitializeComponent();
+            this.username = username;
+            this.userRole = userRole;
         }
 
         private void Registration_Load(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace bugtracker
                 databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into user_registration values(1,'" + txt_firstname.Text + "'," +
+                cmd.CommandText = "insert into user_registration values('1','" + txt_firstname.Text + "'," +
                 "'" + txt_lastname.Text + "','" + txt_username.Text + "','" + txt_password.Text + "','" + txt_email.Text + "','" + combo_usertype.Text + "')";
                 cmd.ExecuteNonQuery();
                 databaseConnection.Close();
@@ -105,8 +107,9 @@ namespace bugtracker
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            Login_Panel login = new Login_Panel();
-            login.Show();
+            new DashBoard_Panel(this.username, this.userRole).Show();
+
+           
             this.Hide();
         }
     }

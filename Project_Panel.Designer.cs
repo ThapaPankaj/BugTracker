@@ -1,6 +1,6 @@
 ﻿namespace bugtracker
 {
-    partial class Admin_Panel
+    partial class Project_Panel
     {
         /// <summary>
         /// Required designer variable.
@@ -324,11 +324,13 @@
             this.txt_project_id.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_project_id.Location = new System.Drawing.Point(112, 79);
             this.txt_project_id.Name = "txt_project_id";
+            this.txt_project_id.ReadOnly = true;
             this.txt_project_id.Size = new System.Drawing.Size(193, 23);
             this.txt_project_id.TabIndex = 28;
             // 
             // listProjects
             // 
+            this.listProjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.listProjects.FullRowSelect = true;
             this.listProjects.Location = new System.Drawing.Point(309, 80);
             this.listProjects.Name = "listProjects";
@@ -338,7 +340,7 @@
             this.listProjects.SelectedIndexChanged += new System.EventHandler(this.listProjects_SelectedIndexChanged);
             this.listProjects.DoubleClick += new System.EventHandler(this.listProjects_DoubleClick);
             // 
-            // Admin_Panel
+            // Project_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,7 +372,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Admin_Panel";
+            this.Name = "Project_Panel";
             this.Text = "Admin_Panel";
             this.Load += new System.EventHandler(this.Admin_Panel_Load);
             this.ResumeLayout(false);

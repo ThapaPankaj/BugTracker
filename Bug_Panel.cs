@@ -13,13 +13,16 @@ using System.Windows.Forms;
 
 namespace bugtracker
 {
-    public partial class Bug : Form
+    public partial class Bug_Panel : Form
     {
+        String username, userRole;
         MySqlConnection databaseConnection = new MySqlConnection("datasource=localhost;username=root;password=umapunkoz;database=bugtracker;");
-        public Bug()
+        public Bug_Panel(String username, String userRole)
         {
             InitializeComponent();
             display_bug_data();
+            this.username = username;
+            this.userRole = userRole;
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -76,7 +79,7 @@ namespace bugtracker
             
         {
            string bugtitle1, projectname1, method1,class1,notes1,sourcecode1,screenshot1,priority1,reportdate1,reportedby1,bugstatus1;
-           int bugid, line;
+           
             bugtitle1 = txt_bug_title.Text;
             projectname1 = txt_project_name.Text;
             method1 = txt_method.Text;
@@ -151,22 +154,27 @@ namespace bugtracker
                 combobox_bugstatus.Focus();
 
             }else{
+                try
+                {
+                    byte[] imagebt = null;
+                    FileStream fstream = new FileStream(this.txt_ScreenshotPath.Text, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fstream);
+                    imagebt = br.ReadBytes((int)fstream.Length);
 
-                byte[] imagebt = null;
-                FileStream fstream = new FileStream(this.txt_ScreenshotPath.Text, FileMode.Open, FileAccess.Read);
-                BinaryReader br = new BinaryReader(fstream);
-                imagebt = br.ReadBytes((int)fstream.Length);
-
-                //databaseConnection.Open();
-                MySqlCommand cmd = databaseConnection.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into  bug values(1,'" + txt_bug_title.Text + "','" + txt_project_name.Text + "','" + Convert.ToInt32(txt_line.Text) + "','" + txt_method.Text + "','" + txt_class.Text + "','" + richtextbox_notes.Text + "','" + richtextbox_source_code.Text + "','" + txt_ScreenshotPath.Text + "','" + txt_priority.Text + "','" + date_Report_date.Text + "','" + txt_reported_by.Text + "','" + combobox_bugstaus.Text + "')";
-                cmd.ExecuteNonQuery();
-                databaseConnection.Close();
-                MessageBox.Show("Bug Details Added Sucessfully");
-                bugView.Clear();
-                //Calling display bug data method
-                display_bug_data();
+                    //databaseConnection.Open();
+                    MySqlCommand cmd = databaseConnection.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into  bug values('1','" + txt_bug_title.Text + "','" + txt_project_name.Text + "','" + Convert.ToInt32(txt_line.Text) + "','" + txt_method.Text + "','" + txt_class.Text + "','" + richtextbox_notes.Text + "','" + richtextbox_source_code.Text + "','" + txt_ScreenshotPath.Text + "','" + txt_priority.Text + "','" + date_Report_date.Text + "','" + txt_reported_by.Text + "','" + combobox_bugstaus.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    databaseConnection.Close();
+                    MessageBox.Show("Bug Details Has Been Added Sucessfully !!!");
+                    bugView.Clear();
+                    //Calling display bug data method
+                    display_bug_data();
+                }catch(Exception ex)
+                    {
+                    MessageBox.Show(ex.Message);
+                }
             } 
         }
         private void btn_clear_Click(object sender, EventArgs e)
@@ -238,8 +246,8 @@ namespace bugtracker
             richtextbox_notes.Text = notes;
             string sourcecode = dt.Rows[0].Field<string>("source_code");
             richtextbox_source_code.Text = sourcecode;
-            string screenshot = dt.Rows[0].Field<string>("screenshot");
-           // txt_ScreenshotPath.Text = screenshot;
+           // string screenshot = dt.Rows[0].Field<string>("screenshot"); 
+           // txt_ScreenshotPath.Text = screenshot.ToString();
             string priority = dt.Rows[0].Field<string>("priority");
             txt_priority.Text = priority;
             DateTime reportdate = dt.Rows[0].Field<DateTime>("report_date");
@@ -263,10 +271,10 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " delete from bug where bug_id ='" + Convert.ToInt32(txt_bug_id.Text) + "'";
+            cmd.CommandText = " delete from bug where bug_id ='" + txt_bug_id.Text + "'";
             cmd.ExecuteNonQuery();
             databaseConnection.Close();
-            MessageBox.Show("Selected Bug Details Sucessfully Deleted !!!");
+            MessageBox.Show("Selected Bug Details Has Been Sucessfully Deleted !!!");
             bugView.Clear();
             display_bug_data();
         }
@@ -276,7 +284,7 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update project set bug_title='" + txt_bug_title.Text + "', project_name ='" + txt_project_name.Text + "',line='" + Convert.ToInt32(txt_line.Text) + "', method='" + txt_method.Text + "',class='" + txt_class.Text + "',notes='" + richtextbox_notes.Text + "',source_code='" + richtextbox_source_code.Text + "',screenshot='" + txt_ScreenshotPath.Text + "',report_date='" + date_Report_date.Text + "',reported_by='" + txt_reported_by + "',bug_status='" + combobox_bugstaus.Text + "' where bug_id ='" + Convert.ToInt32(txt_bug_id.Text) + "'";
+            cmd.CommandText = "update bug set bug_title='" + txt_bug_title.Text + "', project_name ='" + txt_project_name.Text + "',line='" + Convert.ToInt32(txt_line.Text) + "', method='" + txt_method.Text + "',class='" + txt_class.Text + "',notes='" + richtextbox_notes.Text + "',source_code='" + richtextbox_source_code.Text + "',screenshot='" + txt_ScreenshotPath.Text + "',report_date='" + date_Report_date.Text + "',reported_by='" + txt_reported_by.Text + "',bug_status='" + combobox_bugstaus.Text + "' where bug_id ='" +txt_bug_id.Text + "'";
             cmd.ExecuteNonQuery();
             databaseConnection.Close();
             MessageBox.Show("Selected Bug Details Sucessfully Updated !!!");
@@ -287,6 +295,13 @@ namespace bugtracker
         private void txt_bug_id_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            new DashBoard_Panel(this.username, this.userRole).Show();
+            // dashboard.Show();
+            this.Hide();
         }
     }
 }
