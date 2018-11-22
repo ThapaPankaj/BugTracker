@@ -65,6 +65,12 @@
     <Compile Include="Bug.Designer.cs">
       <DependentUpon>Bug.cs</DependentUpon>
     </Compile>
+    <Compile Include="BugFix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BugFix.Designer.cs">
+      <DependentUpon>BugFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bug.resx">
       <DependentUpon>Bug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BugFix.resx">
+      <DependentUpon>BugFix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Panel.resx">
       <DependentUpon>Login_Panel.cs</DependentUpon>

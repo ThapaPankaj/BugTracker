@@ -87,7 +87,7 @@ namespace bugtracker
             priority1 = txt_line.Text;
             reportdate1 = date_Report_date.Text;
             reportedby1 = txt_reported_by.Text;
-            bugstatus1 = combobox_bugstatus.Text;
+            bugstatus1 = combobox_bugstaus.Text;
 
            // bugid = Convert.ToInt32(txt_bug_id.Text);
             // line = Convert.ToInt32(txt_line.Text);
@@ -160,7 +160,7 @@ namespace bugtracker
                 //databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into  bug values(1,'" + txt_bug_title.Text + "','" + txt_project_name.Text + "','" + Convert.ToInt32(txt_line.Text) + "','" + txt_method.Text + "','" + txt_class.Text + "','" + richtextbox_notes.Text + "','" + richtextbox_source_code.Text + "','" + txt_ScreenshotPath.Text + "','" + txt_priority.Text + "','" + date_Report_date.Text + "','" + txt_reported_by.Text + "','" + combobox_bugstatus.Text + "')";
+                cmd.CommandText = "insert into  bug values(1,'" + txt_bug_title.Text + "','" + txt_project_name.Text + "','" + Convert.ToInt32(txt_line.Text) + "','" + txt_method.Text + "','" + txt_class.Text + "','" + richtextbox_notes.Text + "','" + richtextbox_source_code.Text + "','" + txt_ScreenshotPath.Text + "','" + txt_priority.Text + "','" + date_Report_date.Text + "','" + txt_reported_by.Text + "','" + combobox_bugstaus.Text + "')";
                 cmd.ExecuteNonQuery();
                 databaseConnection.Close();
                 MessageBox.Show("Bug Details Added Sucessfully");
@@ -238,7 +238,7 @@ namespace bugtracker
             richtextbox_notes.Text = notes;
             string sourcecode = dt.Rows[0].Field<string>("source_code");
             richtextbox_source_code.Text = sourcecode;
-           // string screenshot = dt.Rows[0].Field<string>("screenshot");
+            string screenshot = dt.Rows[0].Field<string>("screenshot");
            // txt_ScreenshotPath.Text = screenshot;
             string priority = dt.Rows[0].Field<string>("priority");
             txt_priority.Text = priority;
@@ -276,12 +276,8 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update project set bug_title='" + txt_bug_title.Text + "', project_name ='" + txt_project_name.Text + "',line='" + Convert.ToInt32(txt_line.Text) + "', method='" + txt_method.Text + "',class='" + txt_class.Text + "',notes='" + richtextbox_notes.Text + "',source_code='" + richtextbox_source_code.Text + "',screenshot='" + txt_ScreenshotPath.Text + "',report_date='" + date_Report_date.Text + "',reported_by='" + txt_reported_by + "',bug_status='" + combobox_bugstatus.Text + "' where bug_id ='" + Convert.ToInt32(txt_bug_id.Text) + "'";
-
-            Console.WriteLine(cmd.CommandText);
+            cmd.CommandText = "update project set bug_title='" + txt_bug_title.Text + "', project_name ='" + txt_project_name.Text + "',line='" + Convert.ToInt32(txt_line.Text) + "', method='" + txt_method.Text + "',class='" + txt_class.Text + "',notes='" + richtextbox_notes.Text + "',source_code='" + richtextbox_source_code.Text + "',screenshot='" + txt_ScreenshotPath.Text + "',report_date='" + date_Report_date.Text + "',reported_by='" + txt_reported_by + "',bug_status='" + combobox_bugstaus.Text + "' where bug_id ='" + Convert.ToInt32(txt_bug_id.Text) + "'";
             cmd.ExecuteNonQuery();
-
-
             databaseConnection.Close();
             MessageBox.Show("Selected Bug Details Sucessfully Updated !!!");
             bugView.Clear();

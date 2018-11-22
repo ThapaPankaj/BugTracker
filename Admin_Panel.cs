@@ -226,7 +226,7 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update project set project_name='" + txt_project_name.Text + "', assign_to ='" + txt_assign_to.Text + "',assigned_date='" + date_assigned_date.Text + "', completion_date='" + date_completion_date.Text + "',assigned_by='" + txt_assigned_by.Text + "',code='" + richtextbox_code.Text + "',description='" + txt_description.Text + "' where project_id ='" + Convert.ToInt32(txt_project_id.Text)+ "'";
+            cmd.CommandText = "update project set project_name='" + txt_project_name.Text + "', assign_to ='" + txt_assign_to.Text + "',assigned_date='" + date_assigned_date.Text + "', completion_date='" + date_completion_date.Text + "',assigned_by='" + txt_assigned_by.Text + "',code='" + richtextbox_code.Text + "',description='" + txt_description.Text + "' where project_id ='" + txt_project_id.Text+ "'";
 
             Console.WriteLine(cmd.CommandText);
             cmd.ExecuteNonQuery();

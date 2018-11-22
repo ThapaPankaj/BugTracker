@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.combo_usertype = new System.Windows.Forms.ComboBox();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.linklbl_versioncontrol = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -152,12 +153,26 @@
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
+            // linklbl_versioncontrol
+            // 
+            this.linklbl_versioncontrol.AutoSize = true;
+            this.linklbl_versioncontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklbl_versioncontrol.LinkColor = System.Drawing.Color.White;
+            this.linklbl_versioncontrol.Location = new System.Drawing.Point(157, 286);
+            this.linklbl_versioncontrol.Name = "linklbl_versioncontrol";
+            this.linklbl_versioncontrol.Size = new System.Drawing.Size(111, 18);
+            this.linklbl_versioncontrol.TabIndex = 10;
+            this.linklbl_versioncontrol.TabStop = true;
+            this.linklbl_versioncontrol.Text = "Version Control";
+            this.linklbl_versioncontrol.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbl_versioncontrol_LinkClicked);
+            // 
             // Login_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(406, 281);
+            this.ClientSize = new System.Drawing.Size(406, 320);
+            this.Controls.Add(this.linklbl_versioncontrol);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.combo_usertype);
             this.Controls.Add(this.label4);
@@ -189,6 +204,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox combo_usertype;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.LinkLabel linklbl_versioncontrol;
     }
 }
 

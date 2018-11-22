@@ -90,8 +90,11 @@ namespace bugtracker
                                 //  Admin_Panel adminpanel = new Admin_Panel();
                                 //   Admin_Dashboard_Panel adminpanel = new Admin_Dashboard_Panel();
                                 // adminpanel.Show();
-                                Bug bug = new Bug();
-                                bug.Show();
+                                //  Bug bug = new Bug();
+                                // bug.Show();
+
+                                BugFix bugfix = new BugFix();
+                                bugfix.Show();
                                 this.Hide();
                             }
                             else if (combo_usertype.SelectedIndex == 1)
@@ -136,6 +139,11 @@ namespace bugtracker
         private void btn_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void linklbl_versioncontrol_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
