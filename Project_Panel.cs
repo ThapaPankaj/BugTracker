@@ -115,13 +115,13 @@ namespace bugtracker
             {
 
 
-                databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into project values('1','" + txt_project_name.Text + "', '" + txt_assign_to.Text + "','" + date_assigned_date.Text + "','" + date_completion_date.Text + "','" + txt_assigned_by.Text + "','" + richtextbox_code.Text + "','" + txt_description.Text + "')";
                 cmd.ExecuteNonQuery();               
                 databaseConnection.Close();
                 MessageBox.Show("Project Has Been Sucessfully Added !!");
+
                 listProjects.Clear();
                 // Calling display_data Method
                 display_data();
@@ -149,7 +149,7 @@ namespace bugtracker
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-             new DashBoard_Panel(this.username, this.userRole).Show();
+             new Admin_DashBoard_Panel(this.username, this.userRole).Show();
             //  dashboard.Show();
 
             this.Hide();
@@ -216,7 +216,7 @@ namespace bugtracker
             databaseConnection.Open();
             MySqlCommand cmd = databaseConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " delete from project where project_id ='" + Convert.ToInt32(txt_project_id.Text)+ "'";
+            cmd.CommandText = " delete from project where project_id ='" +txt_project_id.Text+ "'";
             cmd.ExecuteNonQuery();
             databaseConnection.Close();
             MessageBox.Show("Selected Project Has Been Sucessfully Deleted !!!");

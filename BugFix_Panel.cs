@@ -22,6 +22,7 @@ namespace bugtracker
             display_bugFixed_details();
             this.username = username;
             this.userRole = userRole;
+            
         }
 
         private void txt_assigned_by_TextChanged(object sender, EventArgs e)
@@ -32,7 +33,6 @@ namespace bugtracker
         private void combobox_bug_id_SelectedIndexChanged(object sender, EventArgs e)
         {
             fillcombo();
-
             databaseConnection.Open();
             String query = "select * from bug where bug_id = '" +combobox_bug_id.SelectedItem.ToString()+ "'";
             MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
@@ -52,7 +52,6 @@ namespace bugtracker
             //Method For Filling Combobox
             void fillcombo()
         {
-           
             String query = "select * from bug";
             MySqlCommand cmd= new MySqlCommand(query, databaseConnection);
             cmd.CommandTimeout = 60;
@@ -65,15 +64,13 @@ namespace bugtracker
                 {
                     String bugid = myreader.GetString(0);
                     combobox_bug_id.Items.Add(bugid);
-                   
-                }
+                                   }
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             databaseConnection.Close();
         }
-
         private void btn_clear_Click(object sender, EventArgs e)
         {
             txt_bugfix_id.Clear();
@@ -133,7 +130,9 @@ namespace bugtracker
                 databaseConnection.Open();
                 MySqlCommand cmd = databaseConnection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into bugfix values('1','" + Convert.ToInt32(combobox_bug_id.Text) + "', '" + richtextbox_resolve_code.Text + "','" + txt_project_name.Text + "','" + txt_resolve_by.Text + "','" + date_resolve_date.Text + "','" + combobox_bugfixstatus.Text + "','" + txt_bug_title.Text + "')";
+                cmd.CommandText = "insert into bugfix values('1','" + Convert.ToInt32(combobox_bug_id.Text) + "', '" + richtextbox_resolve_code.Text + "'," +
+                    "'" + txt_project_name.Text + "','" + txt_resolve_by.Text + "','" + date_resolve_date.Text + "','" + combobox_bugfixstatus.Text + "'," +
+                    "'" + txt_bug_title.Text + "')";
                 cmd.ExecuteNonQuery();
                 databaseConnection.Close();
  
@@ -261,7 +260,6 @@ namespace bugtracker
             Console.WriteLine(cmd.CommandText);
             cmd.ExecuteNonQuery();
 
-
             databaseConnection.Close();
             MessageBox.Show("Selected BugFix Details Has Been Sucessfully Updated !!!");
             bugfixView.Clear();
@@ -270,13 +268,12 @@ namespace bugtracker
 
         private void btn_finished_Click(object sender, EventArgs e)
         {
-            
-            
+                 
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-           new DashBoard_Panel(this.username,userRole).Show();
+           new Admin_DashBoard_Panel(this.username,userRole).Show();
            // dashboard.Show();
             this.Hide();
         }

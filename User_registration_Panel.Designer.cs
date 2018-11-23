@@ -243,7 +243,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Chartreuse;
             this.Name = "User_registration_Panel";
-            this.Text = "Registration_Panel";
+            this.Text = "User_Registration_Panel";
             this.Load += new System.EventHandler(this.Registration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

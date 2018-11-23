@@ -467,7 +467,7 @@
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "BugFix_Panel";
-            this.Text = "BugFix";
+            this.Text = "BugFix_Panel";
             this.Load += new System.EventHandler(this.BugFix_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

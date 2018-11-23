@@ -299,7 +299,7 @@ namespace bugtracker
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            new DashBoard_Panel(this.username, this.userRole).Show();
+            new Admin_DashBoard_Panel(this.username, this.userRole).Show();
             // dashboard.Show();
             this.Hide();
         }

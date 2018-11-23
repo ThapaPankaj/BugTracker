@@ -373,7 +373,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Project_Panel";
-            this.Text = "Admin_Panel";
+            this.Text = "Project_Panel";
             this.Load += new System.EventHandler(this.Admin_Panel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

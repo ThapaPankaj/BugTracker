@@ -13,7 +13,13 @@ C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\MySql.Data.dll
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\Google.Protobuf.dll
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\MySql.Data.xml
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.csproj.CopyComplete
-C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Dashboard_Panel.resources
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Bug_Panel.resources
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.BugFix_Panel.resources
 C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Project_Panel.resources
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\obj\Debug\bugtracker.Admin_DashBoard_Panel.resources
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\NativeBinaries\amd64\git2-e0902fb.dll
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\NativeBinaries\amd64\git2-e0902fb.pdb
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\NativeBinaries\x86\git2-e0902fb.dll
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\NativeBinaries\x86\git2-e0902fb.pdb
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\LibGit2Sharp.dll
+C:\Users\Pankaj\source\repos\Bugtracker\bugtracker\bin\Debug\LibGit2Sharp.xml

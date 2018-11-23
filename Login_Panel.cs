@@ -89,7 +89,7 @@ namespace bugtracker
                             {
                                 //  Admin_Panel adminpanel = new Admin_Panel();
                                 MessageBox.Show("Sucessfully login" + "_" + " Admin " + "_" + dt.Rows[i][3]);
-                                new DashBoard_Panel(txt_username.Text, "Admin").Show();
+                                new Admin_DashBoard_Panel(txt_username.Text, "Admin").Show();
                                
 
                                 //  Bug bug = new Bug();
@@ -104,8 +104,8 @@ namespace bugtracker
                             {
                                 MessageBox.Show("Sucessfully login" + "_" + " Developer " + "_" + dt.Rows[i][3]);
 
-                                new DashBoard_Panel(txt_username.Text, "Developer").Show();
-                                this.Hide();
+                                new Admin_DashBoard_Panel(txt_username.Text, "Developer").Show();
+                                this.Hide();                               
                                
                             }
                            
@@ -113,10 +113,11 @@ namespace bugtracker
                             {
                                 MessageBox.Show("Sucessfully login" + "_" + " Tester " + "_" + dt.Rows[i][3]);
 
-                                new DashBoard_Panel(txt_username.Text, "Tester").Show();
+                                new Admin_DashBoard_Panel(txt_username.Text, "Tester").Show();
                                 this.Hide();
                                
                             }
+                            
                         }
                     }
 

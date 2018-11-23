@@ -473,7 +473,7 @@
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "Bug_Panel";
-            this.Text = "Bug";
+            this.Text = "Bug_Panel";
             this.Load += new System.EventHandler(this.Bug_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
